@@ -22,7 +22,14 @@ cd univ-lab-ops
 gh release download 20260814
 7z x p.7z.001
 ```
- 
+
+```ps1
+$ProgressPreference = 'SilentlyContinue'
+$r = irm https://api.github.com/repos/Nekonic/univ-lab-ops/releases/tags/20260814
+$r.assets | % { irm $_.browser_download_url -OutFile $_.name }
+7z x p.7z.001
+```
+
 ## 적용
  
 ```cmd
