@@ -1,0 +1,1 @@
+curl -L -o "C:\Setup\Installers\GNS3-2.2.61-all-in-one.exe" "https://github.com/GNS3/gns3-gui/releases/download/v2.2.61/GNS3-2.2.61-all-in-one.exe" && "C:\Setup\Installers\GNS3-2.2.61-all-in-one.exe" /S

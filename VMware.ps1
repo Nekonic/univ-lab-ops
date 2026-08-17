@@ -1,0 +1,1 @@
+curl -L -o "C:\Setup\Installers\VMware-Workstation-Full-26H1-25388281.exe" "https://github.com/201853910/VMwareWorkstation/releases/download/26H1/VMware-Workstation-Full-26H1-25388281.exe" && "C:\Setup\Installers\VMware-Workstation-Full-26H1-25388281.exe" /s /v"/qn EULAS_AGREED=1"

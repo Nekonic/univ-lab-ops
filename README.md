@@ -35,3 +35,50 @@ $r.assets | % { irm $_.browser_download_url -OutFile $_.name }
 ```cmd
 dism /Apply-Image /ImageFile:Win11.wim /Index:1 /ApplyDir:C:\
 ```
+
+
+## Link
+```
+https://cisco-packet-tracer.en.uptodown.com/windows/download
+```
+
+```
+https://sourceforge.net/projects/gns-3/
+```
+
+
+```md
+[공통]
+- Google Chrome
+- Notepad++
+- HxD
+- Python 3.14
+- Visual Studio Code
+- VirtualBox
+- Git
+- VMware
+- GNS3
+
+[C언어]
+- Dev-C++
+
+[암호기술]
+- Anaconda3
+
+[웹보안]
+- PhpStorm
+- OWASP ZAP
+- Burp Suite Community
+
+[JAVA]
+- Temurin JDK 25
+- IntelliJ IDEA Community
+- Eclipse (Java)
+
+[포렌식]
+- Autopsy
+
+[네트워크]
+- Wireshark
+- cisco-packet-tracer
+```
