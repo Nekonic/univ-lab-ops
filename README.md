@@ -7,7 +7,7 @@ winget install GitHub.cli
 
 ## 설치
 
-```
+```ps1
 New-Item -ItemType Directory -Path "C:\Setup\Installers" -Force
 
 .\GNS3.ps1
@@ -15,8 +15,13 @@ New-Item -ItemType Directory -Path "C:\Setup\Installers" -Force
 .\install.ps1
 
 Get-AppxPackage -Name *Winget.Source* -AllUsers | Remove-AppxPackage -AllUsers
+Get-AppxPackage -Name *NotepadPlusPlus* -AllUsers | Remove-AppxPackage -AllUsers
 
 Copy-Item ".\Unattend.xml" "C:\Setup\Unattend.xml" -Force
+```
+
+```ps1
+C:\Windows\System32\Sysprep\sysprep.exe /generalize /oobe /shutdown /unattend:C:\Setup\unattend.xml
 ```
 
 
