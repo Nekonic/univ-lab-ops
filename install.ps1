@@ -6,7 +6,6 @@ winget install --id Python.Python.3.14 --source winget --scope machine --silent 
 winget install --id Microsoft.VisualStudioCode --source winget --scope machine --silent --accept-package-agreements --accept-source-agreements
 winget install --id Oracle.VirtualBox --source winget --scope machine --silent --accept-package-agreements --accept-source-agreements
 winget install --id Git.Git --source winget --scope machine --silent --accept-package-agreements --accept-source-agreements
-winget install --id Oracle.VirtualBox --source winget --scope machine --silent --accept-package-agreements --accept-source-agreements
 
 # C언어
 winget install --id Orwell.Dev-C++ --source winget --scope machine --silent --accept-package-agreements --accept-source-agreements
@@ -29,13 +28,6 @@ winget install --id SleuthKit.Autopsy --source winget --scope machine --silent -
 
 # Network
 winget install --id WiresharkFoundation.Wireshark --source winget --scope machine --silent --accept-package-agreements --accept-source-agreements
-
-winget install --id Oracle.VirtualBox --source winget --scope machine --silent --accept-package-agreements --accept-source-agreements
-winget install --id Oracle.VirtualBox --source winget --scope machine --silent --accept-package-agreements --accept-source-agreements
-winget install --id Oracle.VirtualBox --source winget --scope machine --silent --accept-package-agreements --accept-source-agreements
-winget install --id Oracle.VirtualBox --source winget --scope machine --silent --accept-package-agreements --accept-source-agreements
-
-
 
 # Sysprep
 Get-AppxPackage -Name *Winget.Source* -AllUsers | Remove-AppxPackage -AllUsers
