@@ -5,6 +5,21 @@ University lab PC management and operations
 winget install GitHub.cli
 ```
 
+## 설치
+
+```
+New-Item -ItemType Directory -Path "C:\Setup\Installers" -Force
+
+.\GNS3.ps1
+.\VMware.ps1
+.\install.ps1
+
+Get-AppxPackage -Name *Winget.Source* -AllUsers | Remove-AppxPackage -AllUsers
+
+Copy-Item ".\Unattend.xml" "C:\Setup\Unattend.xml" -Force
+```
+
+
 ## 올리기
  
 ```cmd
@@ -56,6 +71,7 @@ https://sourceforge.net/projects/gns-3/
 - Visual Studio Code
 - VirtualBox
 - Git
+
 - VMware
 - GNS3
 
