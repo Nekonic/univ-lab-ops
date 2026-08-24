@@ -25,12 +25,26 @@ Copy-Item ".\lang.ps1" "C:\Setup\lang.ps1" -Force
 C:\Windows\System32\Sysprep\sysprep.exe /generalize /oobe /shutdown /unattend:C:\Setup\unattend.xml
 ```
 
+## wim 생성
+![img](assets\images\Vmware.png)
+
+![img](assets\images\Vmware2.png)
+
+![img](assets\images\Vmware3.png)
+
+wpeinit 쳐야 할수도 있음.
+
+![img](assets\images\Vmware4.png)
+
+![img](assets\images\Vmware5.png)
+
+
 
 ## 올리기
  
 ```cmd
-7z a -v1900m -mx0 C:\Capture\20260814\p.7z C:\Capture\Win11.wim
-gh release create 20260814 C:\Capture\20260814\* --title 20260814 --notes 20260814
+7z a -v1900m -mx0 C:\Capture\20260824\p.7z C:\Capture\Win11.wim
+gh release create 20260824 C:\Capture\20260824\* --title 20260824 --notes 20260824
 ```
  
 `-mx0` — WIM은 이미 압축돼 있어 재압축 이득이 없음.
@@ -40,13 +54,13 @@ gh release create 20260814 C:\Capture\20260814\* --title 20260814 --notes 202608
 ```cmd
 git clone https://github.com/Nekonic/univ-lab-ops
 cd univ-lab-ops
-gh release download 20260814
+gh release download 20260824
 7z x p.7z.001
 ```
 
 ```ps1
 $ProgressPreference = 'SilentlyContinue'
-$r = irm https://api.github.com/repos/Nekonic/univ-lab-ops/releases/tags/20260814
+$r = irm https://api.github.com/repos/Nekonic/univ-lab-ops/releases/tags/20260824
 $r.assets | % { irm $_.browser_download_url -OutFile $_.name }
 7z x p.7z.001
 ```
