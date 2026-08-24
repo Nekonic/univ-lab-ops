@@ -28,6 +28,36 @@
           <Order>1</Order>
           <Path>cmd /c pnputil /add-driver C:\Drivers\*.inf /subdirs /install</Path>
         </RunSynchronousCommand>
+        <RunSynchronousCommand wcm:action="add">
+          <Order>2</Order>
+          <Description>Windows Update 자동 설치 금지</Description>
+          <Path>cmd /c reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoUpdate /t REG_DWORD /d 1 /f</Path>
+        </RunSynchronousCommand>
+        <RunSynchronousCommand wcm:action="add">
+          <Order>3</Order>
+          <Description>WU 인터넷 접속 차단</Description>
+          <Path>cmd /c reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v DoNotConnectToWindowsUpdateInternetLocations /t REG_DWORD /d 1 /f</Path>
+        </RunSynchronousCommand>
+        <RunSynchronousCommand wcm:action="add">
+          <Order>4</Order>
+          <Description>WU 서비스 비활성</Description>
+          <Path>cmd /c sc config wuauserv start= disabled</Path>
+        </RunSynchronousCommand>
+        <RunSynchronousCommand wcm:action="add">
+          <Order>5</Order>
+          <Description>Store 자동 업데이트 금지</Description>
+          <Path>cmd /c reg add "HKLM\SOFTWARE\Policies\Microsoft\WindowsStore" /v AutoDownload /t REG_DWORD /d 2 /f</Path>
+        </RunSynchronousCommand>
+        <RunSynchronousCommand wcm:action="add">
+          <Order>6</Order>
+          <Description>자동 디바이스 암호화 방지</Description>
+          <Path>cmd /c reg add "HKLM\SYSTEM\CurrentControlSet\Control\BitLocker" /v PreventDeviceEncryption /t REG_DWORD /d 1 /f</Path>
+        </RunSynchronousCommand>
+        <RunSynchronousCommand wcm:action="add">
+          <Order>7</Order>
+          <Description>최대 절전 + 빠른 시작 끄기</Description>
+          <Path>cmd /c powercfg /h off</Path>
+        </RunSynchronousCommand>
       </RunSynchronous>
     </component>
 
@@ -41,7 +71,7 @@
           <Password>123456</Password>
         </Credentials>
         <JoinDomain>school.local</JoinDomain>
-        <MachineObjectOU>OU=LabPC,DC=lab,DC=local</MachineObjectOU>
+        <MachineObjectOU>OU=LabPC,DC=school,DC=local</MachineObjectOU>
       </Identification>
     </component>
 
@@ -83,6 +113,25 @@
           </LocalAccount>
         </LocalAccounts>
       </UserAccounts>
+
+      <AutoLogon>
+        <Domain>school.local</Domain>
+        <Username>wds</Username>
+        <Enabled>true</Enabled>
+        <LogonCount>1</LogonCount>
+        <Password>
+          <Value>123456</Value>
+          <PlainText>true</PlainText>
+        </Password>
+      </AutoLogon>
+
+      <FirstLogonCommands>
+        <SynchronousCommand wcm:action="add">
+          <Order>1</Order>
+          <CommandLine>powershell.exe -ExecutionPolicy Bypass -NoProfile -File C:\Setup\lang.ps1</CommandLine>
+          <RequiresUserInput>false</RequiresUserInput>
+        </SynchronousCommand>
+      </FirstLogonCommands>
 
     </component>
   </settings>

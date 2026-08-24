@@ -13,6 +13,7 @@ New-Item -ItemType Directory -Path "C:\Setup\Installers" -Force
 .\GNS3.ps1
 .\VMware.ps1
 .\install.ps1
+.\lang.ps1
 
 Get-AppxPackage -Name *Winget.Source* -AllUsers | Remove-AppxPackage -AllUsers
 Get-AppxPackage -Name *NotepadPlusPlus* -AllUsers | Remove-AppxPackage -AllUsers
