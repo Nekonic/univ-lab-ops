@@ -19,6 +19,8 @@ Get-AppxPackage -Name *NotepadPlusPlus* -AllUsers | Remove-AppxPackage -AllUsers
 
 Copy-Item ".\Unattend.xml" "C:\Setup\Unattend.xml" -Force
 Copy-Item ".\lang.ps1" "C:\Setup\lang.ps1" -Force
+
+Get-AppxPackage *LanguageExperiencePack*mn-MN* -AllUsers
 ```
 
 ```ps1
