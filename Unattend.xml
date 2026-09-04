@@ -63,7 +63,7 @@
         <Credentials>
           <Domain>school.local</Domain>
           <Username>wds</Username>
-          <Password>__JOIN_PW__</Password>
+          <Password>123456</Password>
         </Credentials>
         <JoinDomain>school.local</JoinDomain>
         <MachineObjectOU>OU=LabPC,DC=school,DC=local</MachineObjectOU>
@@ -97,7 +97,7 @@
 
       <UserAccounts>
         <AdministratorPassword>
-          <Value>__LOCALADMIN_PW__</Value>
+          <Value>123456</Value>
           <PlainText>true</PlainText>
         </AdministratorPassword>
       </UserAccounts>
@@ -107,7 +107,7 @@
         <Enabled>true</Enabled>
         <LogonCount>1</LogonCount>
         <Password>
-          <Value>__LOCALADMIN_PW__</Value>
+          <Value>123456</Value>
           <PlainText>true</PlainText>
         </Password>
       </AutoLogon>
